@@ -1,0 +1,513 @@
+:root {
+    --bg-color: #080808;
+    --text-primary: #FFFFFF;
+    --text-secondary: #555555;
+    --text-muted: #333333;
+    --border-color: #1E1E1E;
+    --never-used-color: #444444;
+    --waffle-empty: #222222;
+    --font-main: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.dashboard-container {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 0;
+    width: 100%;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+.title-label {
+    margin-bottom: 4px;
+}
+
+/* === Section 1: Hero === */
+.hero-section {
+    text-align: center;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-huge {
+    font-size: 120px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.hero-title {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 14px;
+    color: var(--never-used-color);
+}
+
+/* === Section 2: Counters === */
+.counters-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.counter-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.counter-value-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.counter-downsized,
+.counter-downsized-sec {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.counter-downsized {
+    color: var(--text-primary);
+}
+
+.counter-downsized-sec {
+    color: var(--never-used-color);
+    font-weight: 300;
+}
+
+.percentage-label {
+    font-size: 16px;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+}
+
+.ai-percentage {
+    color: var(--text-primary);
+}
+
+.never-percentage {
+    color: var(--never-used-color);
+}
+
+.live-indicator {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #FF3333;
+    border-radius: 50%;
+    margin-left: 8px;
+    position: relative;
+    top: -1px;
+}
+
+.live-indicator::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border: 1px solid #FF3333;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+/* === Section 3: Map === */
+.map-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.svg-map-container {
+    width: 100%;
+    margin-top: 8px;
+    height: auto;
+}
+
+.svg-map-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.legend-color {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+/* === Section 4: Country Comparison === */
+.country-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.country-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.country-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.country-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.country-pct {
+    color: var(--text-secondary);
+}
+
+.bar-bg {
+    width: 100%;
+    height: 3px;
+    background-color: var(--waffle-empty);
+}
+
+.bar-fill {
+    height: 100%;
+    background-color: var(--text-primary);
+    transition: width 0.3s ease;
+}
+
+.global-row .country-info {
+    color: var(--text-secondary);
+}
+
+.global-row .country-pct {
+    color: var(--text-primary);
+}
+
+/* === Section 5: Spectrum === */
+.spectrum-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.spectrum-container {
+    position: relative;
+    height: 60px;
+    margin-top: 24px;
+    margin-bottom: 0px;
+}
+
+.spectrum-line {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border-color);
+}
+
+.spectrum-marker {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    transform: translateX(-50%);
+}
+
+/* Leftmost edge handling */
+.spectrum-marker[style*="left: 0%"] {
+    transform: translateX(0%);
+    align-items: flex-start;
+}
+
+.spectrum-marker[style*="left: 0%"] .marker-desc {
+    text-align: left;
+}
+
+/* Rightmost edge handling */
+.spectrum-marker[style*="left: 100%"] {
+    transform: translateX(-100%);
+    align-items: flex-end;
+}
+
+.spectrum-marker[style*="left: 100%"] .marker-desc {
+    text-align: right;
+}
+
+.marker-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    background-color: var(--bg-color);
+    border: 2px solid var(--never-used-color);
+    z-index: 10;
+}
+
+.marker-dot.empty {
+    border-color: var(--never-used-color);
+    background-color: var(--never-used-color);
+}
+
+.marker-dot.mid {
+    border-color: var(--text-secondary);
+    background-color: var(--text-secondary);
+}
+
+.marker-dot.full {
+    border-color: var(--text-primary);
+    background-color: var(--text-primary);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.marker-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.marker-desc {
+    font-size: 11px;
+    color: var(--never-used-color);
+    text-align: center;
+    line-height: 1.4;
+}
+
+.marker-desc.highlight {
+    color: var(--text-primary);
+}
+
+/* === Section 6: Waffle & Stats === */
+.dashboard-waffle-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.stat-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Giant Waffle Grid */
+.giant-waffle-grid {
+    display: grid;
+    grid-template-columns: repeat(50, 8px);
+    gap: 2px;
+    margin-top: 16px;
+    justify-content: center;
+}
+
+.giant-waffle-cell {
+    width: 8px;
+    height: 8px;
+}
+
+.cell-never {
+    background-color: #333333;
+}
+
+.cell-free {
+    background-color: #FFFFFF;
+}
+
+.cell-paid {
+    background-color: #AAAAAA;
+}
+
+.cell-power {
+    background-color: #FF3333;
+}
+
+/* Insights Section */
+.insights-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.insight-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.insight-item:last-child {
+    border-bottom: none;
+}
+
+.insight-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.insight-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+/* === Section 7: Share === */
+.centered-footer {
+    justify-content: center;
+}
+
+.dashboard-footer {
+    display: flex;
+    margin-top: 0px;
+}
+
+.share-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: transparent;
+    border: 1px solid var(--text-primary);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.share-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .counters-section {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .counter-downsized,
+    .counter-downsized-sec {
+        font-size: 36px;
+    }
+
+    .hero-huge {
+        font-size: 80px;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .spectrum-marker {
+        width: 80px;
+    }
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global AI Usage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="dashboard-container">
+
+        <!-- 1) Hero Section -->
+        <section class="hero-section">
+            <div class="hero-huge">84%</div>
+            <h1 class="hero-title">OF HUMANITY HAS NEVER USED AI</h1>
+            <p class="hero-subtitle">Only 16% have ever interacted with an AI. Watch it change.</p>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- 2) SVG World Map -->
+        <section class="map-section stat-block">
+            <div class="label title-label">ADOPTION BY REGION</div>
+            <div class="svg-map-container" id="svg-map-container">
+                <!-- D3 SVG injected here -->
+            </div>
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4A90D9;"></div>High Adoption 30%+
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #F5A623;"></div>Growing 15-30%
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #7ED321;"></div>Emerging 5-15%
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #9B59B6;"></div>Early Stage 1-5%
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #1E1E1E;"></div>Minimal &lt;1%
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- 3) Waffle & Legend -->
+        <main class="dashboard-waffle-stats">
+            <div class="label text-center" style="margin-bottom: -16px;">EACH SQUARE = ~3.2M PEOPLE · FEB 2026</div>
+            <div class="progress-section stat-block">
+                <div class="giant-waffle-grid" id="giant-waffle">
+                    <!-- JS will populate exactly 2500 squares here -->
+                </div>
+                <!-- 4) Custom Waffle Legend -->
+                <div class="waffle-legend" style="display: flex; flex-direction: column; gap: 8px; margin-top: 16px;">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #333333;"></div>Never used AI ~6.8B (84%)
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FFFFFF;"></div>Free chatbot user ~1.3B (16%)
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #AAAAAA;"></div>Pays $20/mo ~15-25M (0.3%)
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF3333;"></div>Uses coding scaffold ~2-5M (0.04%)
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-block">
+                    <div class="label">FREE USERS</div>
+                    <div class="stat-value" id="free-users">1,296,500,000</div>
+                </div>
+                <div class="stat-block">
+                    <div class="label">PAID USERS</div>
+                    <div class="stat-value">~20,000,000</div>
+                </div>
+                <div class="stat-block">
+                    <div class="label">POWER USERS</div>
+                    <div class="stat-value">~3,500,000</div>
+                </div>
+            </div>
+        </main>
+
+        <hr class="section-divider">
+
+        <!-- 5) Live Counters -->
+        <section class="counters-section">
+            <div class="counter-block">
+                <div class="label title-label">EST. AI USERS ONLINE<span class="live-indicator"></span></div>
+                <div class="counter-value-row">
+                    <div class="value counter-downsized" id="ai-users">1,320,000,000</div>
+                    <div class="percentage-label ai-percentage" id="ai-percentage-label">16.26%</div>
+                </div>
+            </div>
+
+            <div class="counter-block">
+                <div class="label title-label">NEVER USED AI</div>
+                <div class="counter-value-row">
+                    <div class="value counter-downsized-sec" id="never-used">6,800,000,000</div>
+                    <div class="percentage-label never-percentage" id="never-percentage-label">83.74%</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- 6) Insights Section -->
+        <section class="insights-section stat-block">
+            <div class="label title-label" style="margin-bottom: 24px;">WHAT THIS DATA ACTUALLY MEANS</div>
+            <div class="insights-list">
+                <div class="insight-item">
+                    <div class="insight-label">THE CODING GAP</div>
+                    <div class="insight-text">The people building AI tools are 0.04% of humanity. They're making
+                        decisions for the other 99.96%.</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-label">THE INDIA PARADOX</div>
+                    <div class="insight-text">India has 1.4B people but less than 5% use AI. The next billion AI users
+                        will likely speak Hindi, not English.</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-label">THE FREE WALL</div>
+                    <div class="insight-text">Less than 2% of free AI users ever convert to a paid plan. The $20/mo
+                        price point excludes most of the world.</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-label">THE SPEED ILLUSION</div>
+                    <div class="insight-text">AI feels like it's everywhere. It's in 193 countries. But meaningfully
+                        used in maybe 15.</div>
+                </div>
+                <div class="insight-item">
+                    <div class="insight-label">THE REAL DIVIDE</div>
+                    <div class="insight-text">It's not human vs AI anymore. It's the 3.5M who build with AI versus the
+                        8.1B who don't know it exists.</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Section 4: Country Comparison -->
+        <section class="country-section stat-block">
+            <div class="label title-label">COUNTRY COMPARISON</div>
+            <div class="country-list">
+                <div class="country-row">
+                    <div class="country-info"><span class="country-name">United States</span><span
+                            class="country-pct">35%</span></div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: 35%;"></div>
+                    </div>
+                </div>
+                <div class="country-row">
+                    <div class="country-info"><span class="country-name">China</span><span
+                            class="country-pct">28%</span></div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: 28%;"></div>
+                    </div>
+                </div>
+                <div class="country-row">
+                    <div class="country-info"><span class="country-name">India</span><span
+                            class="country-pct">12%</span></div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: 12%;"></div>
+                    </div>
+                </div>
+                <div class="country-row">
+                    <div class="country-info"><span class="country-name">Brazil</span><span
+                            class="country-pct">8%</span></div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: 8%;"></div>
+                    </div>
+                </div>
+                <div class="country-row">
+                    <div class="country-info"><span class="country-name">Nigeria</span><span
+                            class="country-pct">3%</span></div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" style="width: 3%;"></div>
+                    </div>
+                </div>
+                <div class="country-row global-row">
+                    <div class="country-info"><span class="country-name global-name">Global Average</span><span
+                            class="country-pct" id="global-avg-pct">16.26%</span></div>
+                    <div class="bar-bg">
+                        <div class="bar-fill" id="global-avg-fill" style="width: 16.26%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Section 5: Spectrum Line -->
+        <section class="spectrum-section stat-block">
+            <div class="label title-label text-center">WHERE DO YOU STAND</div>
+            <div class="spectrum-container">
+                <div class="spectrum-line"></div>
+
+                <div class="spectrum-marker" style="left: 0%;">
+                    <div class="marker-dot empty"></div>
+                    <div class="marker-label">84%</div>
+                    <div class="marker-desc">Never Used AI</div>
+                </div>
+
+                <div class="spectrum-marker" style="left: 16%;">
+                    <div class="marker-dot empty"></div>
+                    <div class="marker-label">16%</div>
+                    <div class="marker-desc">Used AI</div>
+                </div>
+
+                <div class="spectrum-marker" style="left: 70%;">
+                    <div class="marker-dot mid"></div>
+                    <div class="marker-label">0.3%</div>
+                    <div class="marker-desc">Daily Users</div>
+                </div>
+
+                <div class="spectrum-marker" style="left: 100%;">
+                    <div class="marker-dot full"></div>
+                    <div class="marker-label">0.04%</div>
+                    <div class="marker-desc highlight">You (if you're reading this)</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- Section 7: Share -->
+        <footer class="dashboard-footer centered-footer">
+            <a href="#" id="share-twitter" class="share-btn" target="_blank" rel="noopener noreferrer">
+                SHARE STATUS
+            </a>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <script src="https://unpkg.com/topojson-client@3"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
